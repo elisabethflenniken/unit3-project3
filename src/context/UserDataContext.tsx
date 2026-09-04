@@ -13,6 +13,8 @@ interface UserDataContextValue {
   savedIds: string[];
   isSaved: (id: string) => boolean;
   toggleSaved: (id: string) => void;
+  isVisited: (id: string) => boolean;
+  markVisited: (id: string) => void;
   submitRating: (id: string, dimension: RatingKey, value: number) => void;
   myRatingFor: (id: string) => Partial<Record<RatingKey, number>>;
   addRestroom: (input: NewRestroomInput) => string;
@@ -42,6 +44,7 @@ function applyOverride(restroom: Restroom, overrides: RatingOverrides): Restroom
 
 export function UserDataProvider({ children }: { children: ReactNode }) {
   const [savedIds, setSavedIds] = useLocalStorage<string[]>("pitstop.savedIds", []);
+  const [visitedIds, setVisitedIds] = useLocalStorage<string[]>("pitstop.visitedIds", []);
   const [ratingOverrides, setRatingOverrides] = useLocalStorage<RatingOverrides>(
     "pitstop.ratingOverrides",
     {}
@@ -64,6 +67,12 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const toggleSaved = (id: string) => {
     setSavedIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  };
+
+  const isVisited = (id: string) => visitedIds.includes(id);
+
+  const markVisited = (id: string) => {
+    setVisitedIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
   };
 
   const submitRating = (id: string, dimension: RatingKey, value: number) => {
@@ -100,6 +109,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const resetAllData = () => {
     setSavedIds([]);
+    setVisitedIds([]);
     setRatingOverrides({});
     setUserRestrooms([]);
     setReports({});
@@ -110,6 +120,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     savedIds,
     isSaved,
     toggleSaved,
+    isVisited,
+    markVisited,
     submitRating,
     myRatingFor,
     addRestroom,

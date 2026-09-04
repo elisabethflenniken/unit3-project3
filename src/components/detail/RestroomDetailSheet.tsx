@@ -20,7 +20,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useUserData } from "../../context/UserDataContext";
 import { useUserLocation } from "../../context/LocationContext";
 import { useDistance } from "../../hooks/useDistance";
-import { isOpenNow, formatFullSchedule } from "../../utils/hours";
+import { isOpenNow, formatFullSchedule, formatHoursToday } from "../../utils/hours";
 import { buildDirectionsUrl } from "../../utils/mapsLink";
 import RateRestroomForm from "./RateRestroomForm";
 import AmenityChips from "./AmenityChips";
@@ -66,6 +66,7 @@ export default function RestroomDetailSheet({ restroomId, onClose }: RestroomDet
       onClose={onClose}
       onOpen={() => {}}
       disableSwipeToOpen
+      transitionDuration={{ enter: 500, exit: 400 }}
       ModalProps={{ keepMounted: true }}
       slotProps={{
         paper: {
@@ -89,6 +90,11 @@ export default function RestroomDetailSheet({ restroomId, onClose }: RestroomDet
               <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
                 {restroom.name}
               </Typography>
+              {restroom.source === "user" && (
+                <Typography variant="caption" sx={{ color: "info.main", fontWeight: 600 }}>
+                  Community contributed
+                </Typography>
+              )}
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 0.5, flexWrap: "wrap" }}>
                 <Chip
                   label={openNow ? "Open now" : "Closed"}
@@ -147,9 +153,16 @@ export default function RestroomDetailSheet({ restroomId, onClose }: RestroomDet
             sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer" }}
             onClick={() => setHoursExpanded((v) => !v)}
           >
-            <Typography variant="body2" sx={{ fontWeight: 600 }}>
-              Hours
-            </Typography>
+            <Box>
+              <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                Hours
+              </Typography>
+              {!hoursExpanded && (
+                <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                  Today: {formatHoursToday(restroom.hours)}
+                </Typography>
+              )}
+            </Box>
             <IconButton size="small" sx={{ transform: hoursExpanded ? "rotate(180deg)" : "none" }}>
               <ExpandMoreIcon fontSize="small" />
             </IconButton>

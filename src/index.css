@@ -7,8 +7,16 @@ body,
 }
 
 body {
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Leaflet's own stylesheet sets .leaflet-container's font-family with the same
+   specificity as this rule; !important guarantees ours wins regardless of
+   CSS import order (leaflet.css is imported inside a component, after this file). */
+.leaflet-container {
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif !important;
 }
 
 /* Leaflet div-icon markers: strip the default anchor/box styling so our SVG renders cleanly */

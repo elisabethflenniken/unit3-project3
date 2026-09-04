@@ -37,7 +37,7 @@ const theme = createTheme({
     borderRadius: 10,
   },
   typography: {
-    fontFamily: '"Open Sans", -apple-system, "Segoe UI", sans-serif',
+    fontFamily: '"Manrope", -apple-system, "Segoe UI", sans-serif',
     button: {
       textTransform: "none",
       fontWeight: 600,
@@ -65,6 +65,21 @@ const theme = createTheme({
         root: {
           fontWeight: 600,
         },
+        // Clickable chips (filter pills, amenity toggles) default to a washed-out
+        // hover overlay that can look nearly invisible against a white chip.
+        // MUI's own base styles set that overlay via the higher-specificity
+        // selector "&.MuiChip-clickable:hover" (two classes, not one) — this has
+        // to match that exact selector shape or it loses on backgroundColor.
+        clickable: ({ theme }) => ({
+          "&.MuiChip-clickable:hover, &.MuiChip-clickable:focus-visible": {
+            backgroundColor: theme.palette.primary.dark,
+            color: theme.palette.common.white,
+            borderColor: theme.palette.primary.dark,
+          },
+          "&.MuiChip-clickable:hover .MuiChip-icon, &.MuiChip-clickable:focus-visible .MuiChip-icon": {
+            color: theme.palette.common.white,
+          },
+        }),
       },
     },
     MuiDrawer: {

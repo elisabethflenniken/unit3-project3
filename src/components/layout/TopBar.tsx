@@ -63,19 +63,43 @@ export default function TopBar({ searchQuery, onSearchChange, filters, onToggleF
           <BookmarksIcon />
         </IconButton>
       </Paper>
-      <Box sx={{ display: "flex", gap: 0.75, overflowX: "auto", pb: 0.5 }}>
-        {FILTER_LABELS.map(({ key, label }) => (
-          <Chip
-            key={key}
-            label={label}
-            size="small"
-            clickable
-            color={filters[key] ? "primary" : "default"}
-            variant={filters[key] ? "filled" : "outlined"}
-            onClick={() => onToggleFilter(key)}
-            sx={{ bgcolor: filters[key] ? undefined : "background.paper", flexShrink: 0 }}
-          />
-        ))}
+      <Box
+        sx={{
+          display: "flex",
+          gap: 0.75,
+          overflowX: "auto",
+          pb: 0.5,
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          "&::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {FILTER_LABELS.map(({ key, label }) => {
+          const selected = filters[key];
+          // Only two visual states: default (white) and selected (blue) — hover/focus
+          // must render identically to whichever of those states is already active,
+          // so they're pinned to match MUI's own higher-specificity hover selector.
+          const restingStyles = {
+            bgcolor: selected ? "primary.main" : "background.paper",
+            color: selected ? "common.white" : "text.primary",
+            borderColor: selected ? "primary.main" : "divider",
+          };
+          return (
+            <Chip
+              key={key}
+              label={label}
+              size="small"
+              clickable
+              variant={selected ? "filled" : "outlined"}
+              onClick={() => onToggleFilter(key)}
+              sx={{
+                ...restingStyles,
+                flexShrink: 0,
+                "&.MuiChip-clickable:hover, &.MuiChip-clickable:focus-visible": restingStyles,
+              }}
+            />
+          );
+        })}
       </Box>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Snackbar from "@mui/material/Snackbar";
@@ -21,7 +21,7 @@ const DEFAULT_FILTERS: FilterState = {
 };
 
 export default function MapPage() {
-  const { restrooms } = useUserData();
+  const { restrooms, markVisited } = useUserData();
   const { position: userPosition, requestLocation, status } = useUserLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -31,8 +31,13 @@ export default function MapPage() {
   const [savedListOpen, setSavedListOpen] = useState(false);
   const [addFormOpen, setAddFormOpen] = useState(false);
   const [justAddedName, setJustAddedName] = useState<string | null>(null);
+  const [locationToastDismissed, setLocationToastDismissed] = useState(false);
 
   const selectedId = searchParams.get("restroom");
+
+  useEffect(() => {
+    if (selectedId) markVisited(selectedId);
+  }, [selectedId, markVisited]);
 
   const setSelectedId = (id: string | null) => {
     const next = new URLSearchParams(searchParams);
@@ -67,7 +72,13 @@ export default function MapPage() {
 
   return (
     <Box sx={{ position: "relative", width: "100%", height: "100dvh", overflow: "hidden" }}>
-      <MapView restrooms={filteredRestrooms} userPosition={userPosition} onSelectRestroom={setSelectedId} flyToTarget={flyToTarget} />
+      <MapView
+        restrooms={filteredRestrooms}
+        userPosition={userPosition}
+        selectedId={selectedId}
+        onSelectRestroom={setSelectedId}
+        flyToTarget={flyToTarget}
+      />
 
       <TopBar
         searchQuery={searchQuery}
@@ -78,7 +89,10 @@ export default function MapPage() {
       />
 
       <FloatingActions
-        onLocateMe={requestLocation}
+        onLocateMe={() => {
+          setLocationToastDismissed(false);
+          requestLocation();
+        }}
         onAddListing={() => setAddFormOpen(true)}
       />
 
@@ -103,10 +117,14 @@ export default function MapPage() {
       />
 
       <Snackbar
-        open={status === "denied"}
-        message="Location access denied — showing downtown Seattle instead. Tap the locate button to try again."
+        open={status === "denied" && !locationToastDismissed}
         autoHideDuration={6000}
-      />
+        onClose={() => setLocationToastDismissed(true)}
+      >
+        <Alert severity="warning" onClose={() => setLocationToastDismissed(true)}>
+          Location access denied — showing downtown Seattle instead. Tap the locate button to try again.
+        </Alert>
+      </Snackbar>
 
       <Snackbar open={Boolean(justAddedName)} autoHideDuration={4000} onClose={() => setJustAddedName(null)}>
         <Alert severity="success" onClose={() => setJustAddedName(null)}>

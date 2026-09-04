@@ -12,7 +12,7 @@ See [`BRIEF.md`](./BRIEF.md) for the product vision and design principles, and [
 - [MUI](https://mui.com/) (Material UI) for components and theming
 - [React-Leaflet](https://react-leaflet.js.org/) + Leaflet for the map (OpenStreetMap standard tiles — free, no API key; CARTO's free Positron tiles now watermark anonymous requests)
 - React Router for screen navigation
-- Open Sans (`@fontsource/open-sans`)
+- Manrope (`@fontsource/manrope`)
 - Local component state + `localStorage` for saved listings, ratings, and user-added restrooms (no backend in v1)
 
 ## Prerequisites
@@ -59,7 +59,7 @@ src/
 │   ├── add/                 # add-a-listing form
 │   └── layout/               # floating search/filter bar and action buttons
 ├── pages/                  # top-level route screens
-└── theme.ts                 # MUI theme — palette, Open Sans typography, component overrides
+└── theme.ts                 # MUI theme — palette, Manrope typography, component overrides
 ```
 
 See `PLAN.md` §2–3 for the full structure and the `Restroom` data model, and §6 for how the MUI theme is organized so the whole app's look can be customized from one file.

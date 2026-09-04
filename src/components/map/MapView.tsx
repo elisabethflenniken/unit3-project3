@@ -34,6 +34,7 @@ function PickerClickHandler({ onPick }: { onPick: (lat: number, lng: number) => 
 interface MapViewProps {
   restrooms: Restroom[];
   userPosition: [number, number];
+  selectedId?: string | null;
   onSelectRestroom: (id: string) => void;
   flyToTarget?: [number, number] | null;
   pickerMode?: boolean;
@@ -44,6 +45,7 @@ interface MapViewProps {
 export default function MapView({
   restrooms,
   userPosition,
+  selectedId = null,
   onSelectRestroom,
   flyToTarget = null,
   pickerMode = false,
@@ -60,7 +62,12 @@ export default function MapView({
       <TileLayer url={TILE_URL} attribution={TILE_ATTRIBUTION} />
       <UserLocationMarker position={userPosition} />
       {restrooms.map((restroom) => (
-        <RestroomMarker key={restroom.id} restroom={restroom} onSelect={onSelectRestroom} />
+        <RestroomMarker
+          key={restroom.id}
+          restroom={restroom}
+          isSelected={restroom.id === selectedId}
+          onSelect={onSelectRestroom}
+        />
       ))}
       <FlyToController target={flyToTarget} />
       {pickerMode && onPick && <PickerClickHandler onPick={onPick} />}
