@@ -45,24 +45,63 @@ Grant location access when prompted so the map centers on you and distance/walk-
 
 ## Project structure
 
+Components are grouped by feature/screen, not by type — everything for the
+detail sheet lives in one folder, everything for the map lives in another,
+and so on. `pages/` holds only the two route-level composition roots; almost
+all actual UI lives under `components/`.
+
 ```
 src/
-├── data/restrooms.json     # fake seed dataset of Seattle restrooms
-├── types/restroom.ts       # Restroom data model
-├── context/                # saved list / ratings / user-added pins (localStorage-backed)
-├── hooks/                  # geolocation, distance calc, localStorage helper
-├── utils/                  # open-now logic, Google Maps deep-link builder
+├── main.tsx                   # entry point — mounts <App>, imports fonts + global CSS
+├── App.tsx                    # theme/router/provider setup, top-level layout (routes + bottom nav)
+├── theme.ts                   # MUI theme — palette, Manrope typography, component overrides
+├── index.css                  # global CSS the theme can't reach (Leaflet's own DOM, font stack)
+│
+├── pages/                     # one file per route — composition roots, not much logic of their own
+│   ├── MapPage.tsx             # "/" — the map, search/filters, floating actions, all the sheets/dialogs
+│   └── SavedPage.tsx           # "/saved" — saved-restrooms list
+│
 ├── components/
-│   ├── map/                # map + pins
-│   ├── detail/              # restroom detail bottom sheet
-│   ├── saved/               # saved list drawer
-│   ├── add/                 # add-a-listing form
-│   └── layout/               # floating search/filter bar and action buttons
-├── pages/                  # top-level route screens
-└── theme.ts                 # MUI theme — palette, Manrope typography, component overrides
+│   ├── map/                    # the Leaflet map itself and everything drawn on it
+│   │   ├── MapView.tsx           # MapContainer + tile layer + fly-to/picker-mode controllers
+│   │   ├── RestroomMarker.tsx    # the pin/heart icon, color-coded by state (default/selected/visited)
+│   │   ├── UserLocationMarker.tsx  # pulsing "you are here" blip
+│   │   └── PickedLocationMarker.tsx  # drop-pin marker used by the add-a-restroom map picker
+│   ├── detail/                  # the restroom detail bottom sheet and its pieces
+│   │   ├── RestroomDetailSheet.tsx  # the sheet itself — address, hours, actions, etc.
+│   │   ├── RatingStars.tsx         # read-only + interactive star rating control
+│   │   ├── RateRestroomForm.tsx    # the three rating rows (clean/safety/privacy), wired to context
+│   │   └── AmenityChips.tsx        # the amenity/accessibility tag chips
+│   ├── add/
+│   │   └── AddListingForm.tsx    # full-screen "add a restroom" form + map picker
+│   └── layout/                  # chrome shared across the map screen
+│       ├── TopBar.tsx             # floating search bar + live results dropdown + filter chips
+│       ├── FloatingActions.tsx    # locate-me / add-a-restroom buttons
+│       └── BottomNav.tsx          # Map / Saved tab bar
+│
+├── context/                   # app-wide state, provided once in App.tsx
+│   ├── UserDataContext.tsx      # saved ids, ratings, user-added restrooms, reports (localStorage-backed)
+│   └── LocationContext.tsx      # wraps useGeolocation so any component can read the user's position
+│
+├── hooks/
+│   ├── useGeolocation.ts        # browser geolocation + Seattle-downtown fallback
+│   ├── useDistance.ts           # haversine distance + walk-time formatting
+│   └── useLocalStorage.ts       # generic localStorage-backed useState
+│
+├── utils/                     # pure functions — no React, no state
+│   ├── hours.ts                  # open-now / today's-hours / full-schedule formatting
+│   ├── mapsLink.ts               # Google Maps directions deep link
+│   ├── text.ts                   # toSentenceCase
+│   └── chipToggleStyle.ts        # shared two-state (default/selected) chip styling
+│
+├── types/
+│   └── restroom.ts              # the Restroom data model — the contract the rest of the app is built against
+│
+└── data/
+    └── restrooms.json           # fake seed dataset of Seattle restrooms
 ```
 
-See `PLAN.md` §2–3 for the full structure and the `Restroom` data model, and §6 for how the MUI theme is organized so the whole app's look can be customized from one file.
+See `PLAN.md` §2–3 for the original planned structure and the `Restroom` data model, and §6 for how the MUI theme is organized so the whole app's look can be customized from one file.
 
 ## Notes on the data
 
