@@ -1,0 +1,732 @@
+[
+  {
+    "id": "sea-001",
+    "name": "Cal Anderson Park Restroom",
+    "address": "1635 11th Ave, Seattle, WA 98122",
+    "neighborhood": "Capitol Hill",
+    "lat": 47.6178,
+    "lng": -122.3200,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap"],
+    "description": "Park restroom near the shelterhouse, close to the tennis courts and skate park.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "22:30" }, "tue": { "open": "06:00", "close": "22:30" },
+      "wed": { "open": "06:00", "close": "22:30" }, "thu": { "open": "06:00", "close": "22:30" },
+      "fri": { "open": "06:00", "close": "22:30" }, "sat": { "open": "06:00", "close": "22:30" },
+      "sun": { "open": "06:00", "close": "22:30" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.2, "count": 41 },
+      "safety": { "average": 3.6, "count": 30 },
+      "privacy": { "average": 3.9, "count": 28 }
+    },
+    "lastVerified": "2026-07-14",
+    "source": "seed"
+  },
+  {
+    "id": "sea-002",
+    "name": "Ballard Library Restroom",
+    "address": "5614 22nd Ave NW, Seattle, WA 98107",
+    "neighborhood": "Ballard",
+    "lat": 47.6684,
+    "lng": -122.3838,
+    "accessType": "government",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer"],
+    "description": "Inside the Ballard branch library, near the main entrance. Free and open to the public during library hours.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "10:00", "close": "20:00" }, "tue": { "open": "10:00", "close": "20:00" },
+      "wed": { "open": "10:00", "close": "20:00" }, "thu": { "open": "10:00", "close": "20:00" },
+      "fri": { "open": "10:00", "close": "18:00" }, "sat": { "open": "10:00", "close": "17:00" },
+      "sun": null
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.4, "count": 19 },
+      "safety": { "average": 4.6, "count": 15 },
+      "privacy": { "average": 4.1, "count": 12 }
+    },
+    "lastVerified": "2026-08-02",
+    "source": "seed"
+  },
+  {
+    "id": "sea-003",
+    "name": "Uptown Espresso Restroom",
+    "address": "2504 4th Ave, Seattle, WA 98121",
+    "neighborhood": "Belltown",
+    "lat": 47.6142,
+    "lng": -122.3444,
+    "accessType": "business",
+    "requiresPurchase": true,
+    "accessCode": "1937",
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper", "running water", "soap"],
+    "description": "Single-occupancy restroom for customers; ask staff or check the door for the current code.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "18:00" }, "tue": { "open": "06:00", "close": "18:00" },
+      "wed": { "open": "06:00", "close": "18:00" }, "thu": { "open": "06:00", "close": "18:00" },
+      "fri": { "open": "06:00", "close": "18:00" }, "sat": { "open": "07:00", "close": "18:00" },
+      "sun": { "open": "07:00", "close": "17:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.8, "count": 6 },
+      "safety": { "average": 4.0, "count": 5 },
+      "privacy": { "average": 4.5, "count": 5 }
+    },
+    "lastVerified": "2026-06-20",
+    "source": "seed"
+  },
+  {
+    "id": "sea-004",
+    "name": "Pike Place Market Restroom (Main Arcade)",
+    "address": "85 Pike St, Seattle, WA 98101",
+    "neighborhood": "Downtown",
+    "lat": 47.6097,
+    "lng": -122.3425,
+    "accessType": "fully_public",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer"],
+    "description": "Public restroom down the stairs near the main arcade, past the fish-throwing stand. Gets busy on weekends.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "09:00", "close": "18:00" }, "tue": { "open": "09:00", "close": "18:00" },
+      "wed": { "open": "09:00", "close": "18:00" }, "thu": { "open": "09:00", "close": "18:00" },
+      "fri": { "open": "09:00", "close": "18:00" }, "sat": { "open": "09:00", "close": "18:00" },
+      "sun": { "open": "10:00", "close": "17:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 2.9, "count": 63 },
+      "safety": { "average": 3.1, "count": 52 },
+      "privacy": { "average": 3.0, "count": 47 }
+    },
+    "lastVerified": "2026-08-20",
+    "source": "seed"
+  },
+  {
+    "id": "sea-005",
+    "name": "Westlake Park Restroom",
+    "address": "401 Pine St, Seattle, WA 98101",
+    "neighborhood": "Downtown",
+    "lat": 47.6114,
+    "lng": -122.3373,
+    "accessType": "fully_public",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": false,
+    "amenities": ["running water"],
+    "description": "City-operated restroom kiosk at the edge of the park. Attendant-monitored during open hours.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "08:00", "close": "20:00" }, "tue": { "open": "08:00", "close": "20:00" },
+      "wed": { "open": "08:00", "close": "20:00" }, "thu": { "open": "08:00", "close": "20:00" },
+      "fri": { "open": "08:00", "close": "20:00" }, "sat": { "open": "08:00", "close": "20:00" },
+      "sun": { "open": "08:00", "close": "20:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 2.4, "count": 34 },
+      "safety": { "average": 2.2, "count": 30 },
+      "privacy": { "average": 2.8, "count": 22 }
+    },
+    "lastVerified": "2026-05-11",
+    "source": "seed"
+  },
+  {
+    "id": "sea-006",
+    "name": "Fremont Coffee Company",
+    "address": "459 N 36th St, Seattle, WA 98103",
+    "neighborhood": "Fremont",
+    "lat": 47.6512,
+    "lng": -122.3496,
+    "accessType": "business",
+    "requiresPurchase": true,
+    "accessCode": "0417",
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Cozy neighborhood cafe with a single-occupancy restroom in the back, past the fireplace seating.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "07:00", "close": "17:00" }, "tue": { "open": "07:00", "close": "17:00" },
+      "wed": { "open": "07:00", "close": "17:00" }, "thu": { "open": "07:00", "close": "17:00" },
+      "fri": { "open": "07:00", "close": "17:00" }, "sat": { "open": "08:00", "close": "17:00" },
+      "sun": { "open": "08:00", "close": "16:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.7, "count": 22 },
+      "safety": { "average": 4.8, "count": 20 },
+      "privacy": { "average": 4.6, "count": 18 }
+    },
+    "lastVerified": "2026-08-25",
+    "source": "seed"
+  },
+  {
+    "id": "sea-007",
+    "name": "Gas Works Park Restroom",
+    "address": "2101 N Northlake Way, Seattle, WA 98103",
+    "neighborhood": "Wallingford",
+    "lat": 47.6456,
+    "lng": -122.3344,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water"],
+    "description": "Restroom building near the kite-flying hill, with a view of Lake Union.",
+    "hours": { "alwaysOpen": true },
+    "ratings": {
+      "cleanliness": { "average": 3.0, "count": 27 },
+      "safety": { "average": 2.9, "count": 24 },
+      "privacy": { "average": 3.3, "count": 19 }
+    },
+    "lastVerified": "2026-07-30",
+    "source": "seed"
+  },
+  {
+    "id": "sea-008",
+    "name": "University District Farmers Market Restroom",
+    "address": "5030 University Way NE, Seattle, WA 98105",
+    "neighborhood": "U District",
+    "lat": 47.6634,
+    "lng": -122.3133,
+    "accessType": "government",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Public restroom in the neighborhood service center, open weekdays and during Saturday market hours.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "09:00", "close": "17:00" }, "tue": { "open": "09:00", "close": "17:00" },
+      "wed": { "open": "09:00", "close": "17:00" }, "thu": { "open": "09:00", "close": "17:00" },
+      "fri": { "open": "09:00", "close": "17:00" }, "sat": { "open": "09:00", "close": "14:00" },
+      "sun": null
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.9, "count": 11 },
+      "safety": { "average": 4.0, "count": 10 },
+      "privacy": { "average": 3.7, "count": 8 }
+    },
+    "lastVerified": "2026-06-05",
+    "source": "seed"
+  },
+  {
+    "id": "sea-009",
+    "name": "Link Light Rail — Capitol Hill Station",
+    "address": "152 Broadway E, Seattle, WA 98102",
+    "neighborhood": "Capitol Hill",
+    "lat": 47.6193,
+    "lng": -122.3202,
+    "accessType": "transit",
+    "requiresPurchase": false,
+    "accessCode": "5521",
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water"],
+    "description": "Station restroom near the north entrance mezzanine; ask a Sound Transit attendant for the code if the pad is unresponsive.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "05:00", "close": "01:00" }, "tue": { "open": "05:00", "close": "01:00" },
+      "wed": { "open": "05:00", "close": "01:00" }, "thu": { "open": "05:00", "close": "01:00" },
+      "fri": { "open": "05:00", "close": "02:00" }, "sat": { "open": "06:00", "close": "02:00" },
+      "sun": { "open": "06:00", "close": "01:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 2.6, "count": 38 },
+      "safety": { "average": 2.4, "count": 35 },
+      "privacy": { "average": 2.9, "count": 25 }
+    },
+    "lastVerified": "2026-04-18",
+    "source": "seed"
+  },
+  {
+    "id": "sea-010",
+    "name": "Alki Beach Bathhouse",
+    "address": "1702 Alki Ave SW, Seattle, WA 98116",
+    "neighborhood": "West Seattle",
+    "lat": 47.5842,
+    "lng": -122.4083,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Beachfront bathhouse restroom, steps from the sand. Popular in summer, lines possible on hot days.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "23:30" }, "tue": { "open": "06:00", "close": "23:30" },
+      "wed": { "open": "06:00", "close": "23:30" }, "thu": { "open": "06:00", "close": "23:30" },
+      "fri": { "open": "06:00", "close": "23:30" }, "sat": { "open": "06:00", "close": "23:30" },
+      "sun": { "open": "06:00", "close": "23:30" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.5, "count": 55 },
+      "safety": { "average": 3.9, "count": 48 },
+      "privacy": { "average": 3.4, "count": 40 }
+    },
+    "lastVerified": "2026-08-10",
+    "source": "seed"
+  },
+  {
+    "id": "sea-011",
+    "name": "Georgetown Steam Plant Park Restroom",
+    "address": "6605 13th Ave S, Seattle, WA 98108",
+    "neighborhood": "Georgetown",
+    "lat": 47.5497,
+    "lng": -122.3223,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper"],
+    "description": "Small standalone restroom near the park entrance. Not yet rated by many people — a newer add to the dataset.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "07:00", "close": "20:00" }, "tue": { "open": "07:00", "close": "20:00" },
+      "wed": { "open": "07:00", "close": "20:00" }, "thu": { "open": "07:00", "close": "20:00" },
+      "fri": { "open": "07:00", "close": "20:00" }, "sat": { "open": "07:00", "close": "20:00" },
+      "sun": { "open": "07:00", "close": "20:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 0, "count": 0 },
+      "safety": { "average": 0, "count": 0 },
+      "privacy": { "average": 0, "count": 0 }
+    },
+    "lastVerified": "2026-08-29",
+    "source": "seed"
+  },
+  {
+    "id": "sea-012",
+    "name": "Uwajimaya Village Restroom",
+    "address": "600 5th Ave S, Seattle, WA 98104",
+    "neighborhood": "International District",
+    "lat": 47.5972,
+    "lng": -122.3283,
+    "accessType": "business",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Restroom near the food court inside the shopping center. No purchase required, open to shoppers.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "08:00", "close": "21:00" }, "tue": { "open": "08:00", "close": "21:00" },
+      "wed": { "open": "08:00", "close": "21:00" }, "thu": { "open": "08:00", "close": "21:00" },
+      "fri": { "open": "08:00", "close": "21:00" }, "sat": { "open": "08:00", "close": "21:00" },
+      "sun": { "open": "09:00", "close": "20:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.5, "count": 29 },
+      "safety": { "average": 4.6, "count": 26 },
+      "privacy": { "average": 4.2, "count": 21 }
+    },
+    "lastVerified": "2026-08-15",
+    "source": "seed"
+  },
+  {
+    "id": "sea-013",
+    "name": "Green Lake Community Center Restroom",
+    "address": "7201 East Green Lake Dr N, Seattle, WA 98115",
+    "neighborhood": "Green Lake",
+    "lat": 47.6807,
+    "lng": -122.3282,
+    "accessType": "government",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station", "well-lit"],
+    "description": "Inside the community center facing the lake path; popular with runners doing the 2.8-mile loop.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "05:30", "close": "22:00" }, "tue": { "open": "05:30", "close": "22:00" },
+      "wed": { "open": "05:30", "close": "22:00" }, "thu": { "open": "05:30", "close": "22:00" },
+      "fri": { "open": "05:30", "close": "22:00" }, "sat": { "open": "06:00", "close": "20:00" },
+      "sun": { "open": "06:00", "close": "20:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.1, "count": 60 },
+      "safety": { "average": 4.3, "count": 54 },
+      "privacy": { "average": 3.8, "count": 45 }
+    },
+    "lastVerified": "2026-08-28",
+    "source": "seed"
+  },
+  {
+    "id": "sea-014",
+    "name": "South Lake Union Park Restroom",
+    "address": "860 Terry Ave N, Seattle, WA 98109",
+    "neighborhood": "South Lake Union",
+    "lat": 47.6270,
+    "lng": -122.3376,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water"],
+    "description": "Restroom near the Center for Wooden Boats, right on the water.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "22:00" }, "tue": { "open": "06:00", "close": "22:00" },
+      "wed": { "open": "06:00", "close": "22:00" }, "thu": { "open": "06:00", "close": "22:00" },
+      "fri": { "open": "06:00", "close": "22:00" }, "sat": { "open": "06:00", "close": "22:00" },
+      "sun": { "open": "06:00", "close": "22:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.6, "count": 17 },
+      "safety": { "average": 3.7, "count": 15 },
+      "privacy": { "average": 3.3, "count": 12 }
+    },
+    "lastVerified": "2026-07-22",
+    "source": "seed"
+  },
+  {
+    "id": "sea-015",
+    "name": "Shell Gas Station — Queen Anne",
+    "address": "1901 Queen Anne Ave N, Seattle, WA 98109",
+    "neighborhood": "Queen Anne",
+    "lat": 47.6376,
+    "lng": -122.3568,
+    "accessType": "business",
+    "requiresPurchase": true,
+    "accessCode": "8842",
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper", "running water"],
+    "description": "Ask the cashier for the key; restroom is around the side of the building.",
+    "hours": { "alwaysOpen": true },
+    "ratings": {
+      "cleanliness": { "average": 2.2, "count": 14 },
+      "safety": { "average": 2.5, "count": 13 },
+      "privacy": { "average": 3.0, "count": 9 }
+    },
+    "lastVerified": "2026-05-30",
+    "source": "seed"
+  },
+  {
+    "id": "sea-016",
+    "name": "Volunteer Park Conservatory Restroom",
+    "address": "1400 E Galer St, Seattle, WA 98112",
+    "neighborhood": "Capitol Hill",
+    "lat": 47.6303,
+    "lng": -122.3153,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "well-lit"],
+    "description": "Near the conservatory entrance and the water tower; a quiet, well-kept spot inside the park.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "21:00" }, "tue": { "open": "06:00", "close": "21:00" },
+      "wed": { "open": "06:00", "close": "21:00" }, "thu": { "open": "06:00", "close": "21:00" },
+      "fri": { "open": "06:00", "close": "21:00" }, "sat": { "open": "06:00", "close": "21:00" },
+      "sun": { "open": "06:00", "close": "21:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.3, "count": 24 },
+      "safety": { "average": 4.5, "count": 21 },
+      "privacy": { "average": 4.0, "count": 17 }
+    },
+    "lastVerified": "2026-08-18",
+    "source": "seed"
+  },
+  {
+    "id": "sea-017",
+    "name": "Ballard Locks Restroom",
+    "address": "3015 NW 54th St, Seattle, WA 98107",
+    "neighborhood": "Ballard",
+    "lat": 47.6656,
+    "lng": -122.3968,
+    "accessType": "government",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer"],
+    "description": "Restroom at the visitor center near the fish ladder, run by the Army Corps of Engineers.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "07:00", "close": "21:00" }, "tue": { "open": "07:00", "close": "21:00" },
+      "wed": { "open": "07:00", "close": "21:00" }, "thu": { "open": "07:00", "close": "21:00" },
+      "fri": { "open": "07:00", "close": "21:00" }, "sat": { "open": "07:00", "close": "21:00" },
+      "sun": { "open": "07:00", "close": "21:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.0, "count": 33 },
+      "safety": { "average": 4.2, "count": 29 },
+      "privacy": { "average": 3.6, "count": 25 }
+    },
+    "lastVerified": "2026-08-05",
+    "source": "seed"
+  },
+  {
+    "id": "sea-018",
+    "name": "Kerry Park Portable Restroom",
+    "address": "211 W Highland Dr, Seattle, WA 98119",
+    "neighborhood": "Queen Anne",
+    "lat": 47.6295,
+    "lng": -122.3599,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": [],
+    "description": "Portable toilet at the popular skyline viewpoint. Basic facilities only, no running water.",
+    "hours": { "alwaysOpen": true },
+    "ratings": {
+      "cleanliness": { "average": 1.8, "count": 21 },
+      "safety": { "average": 2.6, "count": 18 },
+      "privacy": { "average": 2.1, "count": 15 }
+    },
+    "lastVerified": "2026-03-12",
+    "source": "seed"
+  },
+  {
+    "id": "sea-019",
+    "name": "Rainier Beach Community Center Restroom",
+    "address": "8825 Rainier Ave S, Seattle, WA 98118",
+    "neighborhood": "Rainier Beach",
+    "lat": 47.5232,
+    "lng": -122.2665,
+    "accessType": "government",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Inside the community center near the pool entrance.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "08:00", "close": "20:00" }, "tue": { "open": "08:00", "close": "20:00" },
+      "wed": { "open": "08:00", "close": "20:00" }, "thu": { "open": "08:00", "close": "20:00" },
+      "fri": { "open": "08:00", "close": "20:00" }, "sat": { "open": "09:00", "close": "17:00" },
+      "sun": null
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.2, "count": 8 },
+      "safety": { "average": 4.4, "count": 7 },
+      "privacy": { "average": 3.9, "count": 6 }
+    },
+    "lastVerified": "2026-07-01",
+    "source": "seed"
+  },
+  {
+    "id": "sea-020",
+    "name": "Discovery Park Visitor Center Restroom",
+    "address": "3801 Discovery Park Blvd, Seattle, WA 98199",
+    "neighborhood": "Magnolia",
+    "lat": 47.6598,
+    "lng": -122.4151,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station", "well-lit"],
+    "description": "Restroom at the main visitor center, at the trailhead for the loop trail down to the beach.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "08:30", "close": "17:00" }, "tue": { "open": "08:30", "close": "17:00" },
+      "wed": { "open": "08:30", "close": "17:00" }, "thu": { "open": "08:30", "close": "17:00" },
+      "fri": { "open": "08:30", "close": "17:00" }, "sat": { "open": "08:30", "close": "17:00" },
+      "sun": { "open": "08:30", "close": "17:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.6, "count": 37 },
+      "safety": { "average": 4.7, "count": 32 },
+      "privacy": { "average": 4.3, "count": 28 }
+    },
+    "lastVerified": "2026-08-22",
+    "source": "seed"
+  },
+  {
+    "id": "sea-021",
+    "name": "Starbucks Reserve Roastery Restroom",
+    "address": "1124 Pike St, Seattle, WA 98101",
+    "neighborhood": "Capitol Hill",
+    "lat": 47.6141,
+    "lng": -122.3286,
+    "accessType": "business",
+    "requiresPurchase": true,
+    "accessCode": "6103",
+    "isAdaAccessible": true,
+    "isGenderNeutral": false,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water", "soap", "hand dryer", "baby changing station"],
+    "description": "Downstairs restroom for customers; code posted near the register, changes periodically.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "07:00", "close": "21:00" }, "tue": { "open": "07:00", "close": "21:00" },
+      "wed": { "open": "07:00", "close": "21:00" }, "thu": { "open": "07:00", "close": "21:00" },
+      "fri": { "open": "07:00", "close": "22:00" }, "sat": { "open": "07:00", "close": "22:00" },
+      "sun": { "open": "08:00", "close": "20:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.0, "count": 44 },
+      "safety": { "average": 4.1, "count": 39 },
+      "privacy": { "average": 3.8, "count": 33 }
+    },
+    "lastVerified": "2026-08-27",
+    "source": "seed"
+  },
+  {
+    "id": "sea-022",
+    "name": "Myrtle Edwards Park Restroom",
+    "address": "3130 Alaskan Way W, Seattle, WA 98121",
+    "neighborhood": "Downtown",
+    "lat": 47.6212,
+    "lng": -122.3628,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": false,
+    "amenities": ["toilet paper", "running water"],
+    "description": "Small restroom building along the waterfront trail, popular with cyclists on the Elliott Bay Trail.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "22:00" }, "tue": { "open": "06:00", "close": "22:00" },
+      "wed": { "open": "06:00", "close": "22:00" }, "thu": { "open": "06:00", "close": "22:00" },
+      "fri": { "open": "06:00", "close": "22:00" }, "sat": { "open": "06:00", "close": "22:00" },
+      "sun": { "open": "06:00", "close": "22:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.3, "count": 16 },
+      "safety": { "average": 3.0, "count": 14 },
+      "privacy": { "average": 3.1, "count": 11 }
+    },
+    "lastVerified": "2026-06-28",
+    "source": "seed"
+  },
+  {
+    "id": "sea-023",
+    "name": "Judkins Park Restroom",
+    "address": "2150 S Norman St, Seattle, WA 98144",
+    "neighborhood": "Central District",
+    "lat": 47.5852,
+    "lng": -122.2988,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper"],
+    "description": "Small restroom near the playground and light rail station entrance.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "06:00", "close": "22:00" }, "tue": { "open": "06:00", "close": "22:00" },
+      "wed": { "open": "06:00", "close": "22:00" }, "thu": { "open": "06:00", "close": "22:00" },
+      "fri": { "open": "06:00", "close": "22:00" }, "sat": { "open": "06:00", "close": "22:00" },
+      "sun": { "open": "06:00", "close": "22:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 3.0, "count": 2 },
+      "safety": { "average": 2.5, "count": 2 },
+      "privacy": { "average": 3.5, "count": 1 }
+    },
+    "lastVerified": "2026-02-14",
+    "source": "seed"
+  },
+  {
+    "id": "sea-024",
+    "name": "Molly Moon's Ice Cream (Wallingford)",
+    "address": "1622 N 45th St, Seattle, WA 98103",
+    "neighborhood": "Wallingford",
+    "lat": 47.6614,
+    "lng": -122.3346,
+    "accessType": "business",
+    "requiresPurchase": true,
+    "accessCode": null,
+    "isAdaAccessible": true,
+    "isGenderNeutral": true,
+    "hasBabyChanging": true,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper", "running water", "soap", "baby changing station"],
+    "description": "Customer restroom, no code needed — just ask staff to unlock it if the door is latched.",
+    "hours": { "alwaysOpen": false, "schedule": {
+      "mon": { "open": "11:00", "close": "22:00" }, "tue": { "open": "11:00", "close": "22:00" },
+      "wed": { "open": "11:00", "close": "22:00" }, "thu": { "open": "11:00", "close": "22:00" },
+      "fri": { "open": "11:00", "close": "23:00" }, "sat": { "open": "11:00", "close": "23:00" },
+      "sun": { "open": "11:00", "close": "22:00" }
+    }},
+    "ratings": {
+      "cleanliness": { "average": 4.5, "count": 12 },
+      "safety": { "average": 4.6, "count": 10 },
+      "privacy": { "average": 4.4, "count": 9 }
+    },
+    "lastVerified": "2026-08-30",
+    "source": "seed"
+  },
+  {
+    "id": "sea-025",
+    "name": "Community Pole Pin (user-added) — Beacon Hill Park Bench Stop",
+    "address": "Near 15th Ave S & S Lander St, Seattle, WA 98144",
+    "neighborhood": "Beacon Hill",
+    "lat": 47.5798,
+    "lng": -122.3115,
+    "accessType": "park",
+    "requiresPurchase": false,
+    "accessCode": null,
+    "isAdaAccessible": false,
+    "isGenderNeutral": true,
+    "hasBabyChanging": false,
+    "isSingleOccupancy": true,
+    "amenities": ["toilet paper"],
+    "description": "Portable toilet added by a community member near the community garden — not officially maintained by the city.",
+    "hours": { "alwaysOpen": true },
+    "ratings": {
+      "cleanliness": { "average": 2.0, "count": 3 },
+      "safety": { "average": 2.3, "count": 3 },
+      "privacy": { "average": 2.7, "count": 3 }
+    },
+    "lastVerified": "2026-08-31",
+    "source": "user"
+  }
+]

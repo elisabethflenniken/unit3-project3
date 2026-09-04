@@ -1,0 +1,87 @@
+import { createTheme } from "@mui/material/styles";
+
+// Single source of truth for the app's look. Components should reference
+// theme tokens (theme.palette.success.main, etc.) rather than hardcoding hex values.
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    background: {
+      default: "#F8F9FA",
+      paper: "#FFFFFF",
+    },
+    text: {
+      primary: "#1A1D1F",
+      secondary: "#5F6368",
+    },
+    primary: {
+      main: "#1A73E8", // Google-Maps-blue accent for links/active states
+    },
+    success: {
+      main: "#1E8E3E", // open now
+    },
+    warning: {
+      main: "#B45309", // needs a code / access-restricted (darkened for outdoor contrast)
+    },
+    error: {
+      main: "#D93025",
+    },
+    info: {
+      main: "#8430CE", // unverified / not yet rated
+    },
+    grey: {
+      500: "#9AA0A6", // closed
+    },
+    divider: "#E0E3E7",
+  },
+  shape: {
+    borderRadius: 10,
+  },
+  typography: {
+    fontFamily: '"Open Sans", -apple-system, "Segoe UI", sans-serif',
+    button: {
+      textTransform: "none",
+      fontWeight: 600,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 999,
+          minHeight: 44,
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          minWidth: 44,
+          minHeight: 44,
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontWeight: 600,
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          boxShadow: "0 -4px 24px rgba(0,0,0,0.15)",
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        rounded: {
+          borderRadius: 12,
+        },
+      },
+    },
+  },
+});
+
+export default theme;
