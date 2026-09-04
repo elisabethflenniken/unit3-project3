@@ -10,8 +10,8 @@ import Divider from "@mui/material/Divider";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import DirectionsIcon from "@mui/icons-material/Directions";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import FlagIcon from "@mui/icons-material/Flag";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -26,6 +26,12 @@ import RateRestroomForm from "./RateRestroomForm";
 import AmenityChips from "./AmenityChips";
 
 const REPORT_REASONS = ["Code doesn't work", "Permanently closed", "Inaccurate info", "Unsafe / unclean"];
+
+// Standard US address formatting: street on its own line, "City, State ZIP" on the next.
+function splitAddress(address: string): [string, string] {
+  const [street, ...rest] = address.split(",");
+  return [street.trim(), rest.join(",").trim()];
+}
 
 interface RestroomDetailSheetProps {
   restroomId: string | null;
@@ -113,9 +119,13 @@ export default function RestroomDetailSheet({ restroomId, onClose }: RestroomDet
           </Box>
 
           <Box sx={{ mt: 2, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 1 }}>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              {restroom.address}
-            </Typography>
+            <Box>
+              {splitAddress(restroom.address).map((line) => (
+                <Typography key={line} variant="body2" sx={{ color: "text.secondary" }}>
+                  {line}
+                </Typography>
+              ))}
+            </Box>
             <Button
               variant="contained"
               size="small"
@@ -190,7 +200,7 @@ export default function RestroomDetailSheet({ restroomId, onClose }: RestroomDet
             <Button
               size="small"
               variant={isSaved(restroom.id) ? "contained" : "outlined"}
-              startIcon={isSaved(restroom.id) ? <BookmarkIcon /> : <BookmarkBorderIcon />}
+              startIcon={isSaved(restroom.id) ? <FavoriteIcon /> : <FavoriteBorderIcon />}
               onClick={() => toggleSaved(restroom.id)}
             >
               {isSaved(restroom.id) ? "Saved" : "Save"}

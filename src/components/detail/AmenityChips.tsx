@@ -5,6 +5,7 @@ import WcIcon from "@mui/icons-material/Wc";
 import ChildFriendlyIcon from "@mui/icons-material/ChildFriendly";
 import PersonIcon from "@mui/icons-material/Person";
 import type { Restroom } from "../../types/restroom";
+import { toSentenceCase } from "../../utils/text";
 
 const chipSx = { bgcolor: "background.paper", borderColor: "divider" };
 
@@ -28,7 +29,7 @@ export default function AmenityChips({ restroom }: { restroom: Restroom }) {
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
       {flagChips}
       {restroom.amenities.map((amenity) => (
-        <Chip key={amenity} label={amenity} size="small" variant="outlined" sx={chipSx} />
+        <Chip key={amenity} label={toSentenceCase(amenity)} size="small" variant="outlined" sx={chipSx} />
       ))}
     </Box>
   );

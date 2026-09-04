@@ -10,7 +10,7 @@ type PinState = "default" | "selected" | "visited";
 // now; visited = opened at some point this session/device but not currently open.
 const COLORS: Record<PinState, { fill: string; outline: string }> = {
   default: { fill: "#1A73E8", outline: "#0B57D0" },
-  selected: { fill: "#F57C00", outline: "#C25E00" },
+  selected: { fill: "#0B3E91", outline: "#062A66" },
   visited: { fill: "#8AB4F8", outline: "#1A73E8" },
 };
 
@@ -28,7 +28,7 @@ const PIN_HEIGHT = PIN_BASE_HEIGHT * PIN_SCALE;
 // pins, scaled and centered into the pin's rounded top (~17,17 in path space).
 const HEART_PATH =
   "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z";
-const HEART_SCALE = 0.5;
+const HEART_SCALE = 0.72;
 const HEART_CENTER = { x: 12, y: 12.175 };
 const HEART_TARGET = { x: 17, y: 15.5 };
 const HEART_DX = HEART_TARGET.x - HEART_CENTER.x * HEART_SCALE;

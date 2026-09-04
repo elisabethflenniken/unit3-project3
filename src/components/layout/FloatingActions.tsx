@@ -14,7 +14,10 @@ export default function FloatingActions({ onLocateMe, onAddListing }: FloatingAc
       sx={{
         position: "absolute",
         right: 16,
-        bottom: "calc(env(safe-area-inset-bottom) + 16px)",
+        // The bottom nav bar (not this container) now owns the physical
+        // screen edge and its own safe-area padding, so this just needs
+        // clearance from the map's own bottom edge.
+        bottom: 16,
         zIndex: 1000,
         display: "flex",
         flexDirection: "column",

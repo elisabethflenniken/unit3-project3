@@ -16,6 +16,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import MapView from "../map/MapView";
 import type { AccessType, Hours } from "../../types/restroom";
 import { useUserData } from "../../context/UserDataContext";
+import { toSentenceCase } from "../../utils/text";
+import { getToggleChipSx } from "../../utils/chipToggleStyle";
 
 const ACCESS_TYPES: { value: AccessType; label: string }[] = [
   { value: "fully_public", label: "Fully public" },
@@ -55,7 +57,6 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
   const [accessCode, setAccessCode] = useState("");
   const [isAdaAccessible, setIsAdaAccessible] = useState(false);
   const [isGenderNeutral, setIsGenderNeutral] = useState(false);
-  const [hasBabyChanging, setHasBabyChanging] = useState(false);
   const [isSingleOccupancy, setIsSingleOccupancy] = useState(false);
   const [amenities, setAmenities] = useState<string[]>([]);
   const [description, setDescription] = useState("");
@@ -74,7 +75,6 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
     setAccessCode("");
     setIsAdaAccessible(false);
     setIsGenderNeutral(false);
-    setHasBabyChanging(false);
     setIsSingleOccupancy(false);
     setAmenities([]);
     setDescription("");
@@ -87,6 +87,16 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
   const toggleAmenity = (amenity: string) => {
     setAmenities((prev) => (prev.includes(amenity) ? prev.filter((a) => a !== amenity) : [...prev, amenity]));
   };
+
+  // "Baby changing station" already lives in the amenities list, so it isn't
+  // duplicated as its own accommodation flag — hasBabyChanging is derived
+  // from that selection instead of tracked separately.
+  const flagOptions: { label: string; checked: boolean; onToggle: () => void }[] = [
+    { label: "ADA accessible", checked: isAdaAccessible, onToggle: () => setIsAdaAccessible((v) => !v) },
+    { label: "Gender-neutral", checked: isGenderNeutral, onToggle: () => setIsGenderNeutral((v) => !v) },
+    { label: "Single-occupancy", checked: isSingleOccupancy, onToggle: () => setIsSingleOccupancy((v) => !v) },
+    { label: "Requires purchase", checked: requiresPurchase, onToggle: () => setRequiresPurchase((v) => !v) },
+  ];
 
   const handleSubmit = () => {
     if (!name.trim() || !address.trim() || !neighborhood.trim()) {
@@ -117,7 +127,7 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
       accessCode: accessCode.trim() || null,
       isAdaAccessible,
       isGenderNeutral,
-      hasBabyChanging,
+      hasBabyChanging: amenities.includes("baby changing station"),
       isSingleOccupancy,
       amenities,
       description: description.trim(),
@@ -131,7 +141,7 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
 
   return (
     <Dialog fullScreen open={open} onClose={onClose}>
-      <AppBar position="sticky" color="default" elevation={1}>
+      <AppBar position="sticky" color="default" elevation={0} sx={{ bgcolor: "background.paper" }}>
         <Toolbar>
           <IconButton edge="start" onClick={onClose} aria-label="Close">
             <CloseIcon />
@@ -231,45 +241,30 @@ export default function AddListingForm({ open, onClose, initialPosition, onCreat
 
         <Box>
           <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>
-            Access & accommodations
-          </Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-            <FormControlLabel
-              control={<Switch checked={requiresPurchase} onChange={(e) => setRequiresPurchase(e.target.checked)} />}
-              label="Requires purchase"
-            />
-            <FormControlLabel
-              control={<Switch checked={isAdaAccessible} onChange={(e) => setIsAdaAccessible(e.target.checked)} />}
-              label="ADA accessible"
-            />
-            <FormControlLabel
-              control={<Switch checked={isGenderNeutral} onChange={(e) => setIsGenderNeutral(e.target.checked)} />}
-              label="Gender-neutral"
-            />
-            <FormControlLabel
-              control={<Switch checked={hasBabyChanging} onChange={(e) => setHasBabyChanging(e.target.checked)} />}
-              label="Baby changing station"
-            />
-            <FormControlLabel
-              control={<Switch checked={isSingleOccupancy} onChange={(e) => setIsSingleOccupancy(e.target.checked)} />}
-              label="Single-occupancy"
-            />
-          </Box>
-        </Box>
-
-        <Box>
-          <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>
             Amenities
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-            {AMENITY_OPTIONS.map((amenity) => (
+            {AMENITY_OPTIONS.map((amenity) => {
+              const selected = amenities.includes(amenity);
+              return (
+                <Chip
+                  key={amenity}
+                  label={toSentenceCase(amenity)}
+                  clickable
+                  variant={selected ? "filled" : "outlined"}
+                  onClick={() => toggleAmenity(amenity)}
+                  sx={getToggleChipSx(selected)}
+                />
+              );
+            })}
+            {flagOptions.map((flag) => (
               <Chip
-                key={amenity}
-                label={amenity}
+                key={flag.label}
+                label={flag.label}
                 clickable
-                color={amenities.includes(amenity) ? "primary" : "default"}
-                variant={amenities.includes(amenity) ? "filled" : "outlined"}
-                onClick={() => toggleAmenity(amenity)}
+                variant={flag.checked ? "filled" : "outlined"}
+                onClick={flag.onToggle}
+                sx={getToggleChipSx(flag.checked)}
               />
             ))}
           </Box>

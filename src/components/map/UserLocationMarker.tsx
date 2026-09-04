@@ -10,8 +10,8 @@ const icon = L.divIcon({
     </div>
   `,
   className: "user-location-icon",
-  iconSize: [22, 22],
-  iconAnchor: [11, 11],
+  iconSize: [46, 46],
+  iconAnchor: [23, 23],
 });
 
 interface UserLocationMarkerProps {
